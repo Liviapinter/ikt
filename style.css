@@ -211,6 +211,11 @@ main h2 {
     margin-top: 45px;
     font-weight: 700;
 }
+.wrap {
+    max-width: 1180px;
+    margin:  auto;
+    padding: 0 20px;
+}
 
 footer {
     background-color: #090d16;
