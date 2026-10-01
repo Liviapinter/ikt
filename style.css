@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f9f6f0; /* Meleg, világos háttérszín */
-    color: #333333;
+    background-color:gray;
+    color: #e2e8f0;
     line-height: 1.6;
     display: flex;
     flex-direction: column;
@@ -16,54 +16,208 @@ body {
 }
 
 
-header {
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+.navbar {
+    background: rgba(15, 23, 42, 0.85) !important;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 15px rgba(45, 106, 79, 0.15);
+    padding: 1rem 2.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.4s ease;
 }
+
 
 .navbar-brand {
-    font-weight: bold;
-    color: #2c5e3b !important; /* Mély zöld szín a márkának */
+    font-weight: 800;
     font-size: 1.5rem;
+    color: #ffffff !important;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    letter-spacing: -0.5px;
+    text-shadow: 0 0 10px rgba(45, 106, 79, 0.5);
 }
 
-.nav-link {
-    color: #555555 !important;
-    font-weight: 500;
-    transition: color 0.2s ease;
+.navbar-brand::before {
+    content: "🐾";
+    font-size: 1.2rem;
+    background: linear-gradient(135deg, #2d6a4f, #52b788);
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(82, 183, 136, 0.6);
 }
 
-.nav-link:hover, .nav-link.active {
-    color: #2c5e3b !important;
+
+.navbar-nav {
+    gap: 12px;
+    align-items: center;
+    margin-left: 3rem;
 }
 
-.btn-outline-success {
-    color: #2c5e3b;
-    border-color: #2c5e3b;
+
+.navbar-nav .nav-link {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: black !important;
+    padding: 10px 18px !important;
+    border-radius: 14px;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 1;
 }
 
-.btn-outline-success:hover {
-    background-color: #2c5e3b;
+
+.navbar-nav .nav-link[href*="kutyak"]::before { content: "🐶"; font-size: 0.9rem; }
+.navbar-nav .nav-link[href*="macskak"]::before { content: "🐱"; font-size: 0.9rem; }
+.navbar-nav .nav-link[href*="madarok"]::before { content: "🐦"; font-size: 0.9rem; }
+.navbar-nav .nav-link[href*="kisallatok"]::before { content: "🐹"; font-size: 0.9rem; }
+
+
+.navbar-nav .nav-link:hover {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+
+.navbar-nav .nav-link.active {
+    color: #ffffff !important;
+    background: transparent !important;
+    position: relative;
+}
+
+
+.navbar-nav .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 18px;
+    width: 45%; 
+    height: 3px;
+    background: linear-gradient(90deg, #52b788, #40916c);
+    border-radius: 4px;
+    box-shadow: 0 0 10px #52b788, 0 0 20px #2d6a4f;
+}
+
+.navbar form.d-flex {
+    gap: 10px;
+    align-items: center;
+    margin-left: auto;
+    background: rgba(15, 23, 42, 0.9);
+    padding: 6px 12px;
+    border-radius: 50px;
+    border: 1.5px solid rgba(82, 183, 136, 0.4);
+    transition: all 0.3s ease;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+.navbar form.d-flex:focus-within {
+    border-color: #52b788;
+    box-shadow: 0 0 20px rgba(82, 183, 136, 0.4), inset 0 0 5px rgba(82, 183, 136, 0.2);
+}
+
+
+.navbar .form-control {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 6px 10px;
+    font-size: 0.95rem;
+    width: 220px;
+    color: #ffffff !important;
+}
+
+.navbar .form-control::placeholder {
+    color: #64748b;
+}
+
+.navbar .form-control:focus {
+    outline: none !important;
+}
+
+
+.navbar .btn-outline-success {
+    background: linear-gradient(135deg, #2d6a4f, #52b788);
     color: #ffffff;
-    border-color: #2c5e3b;
+    border: none;
+    border-radius: 40px;
+    padding: 8px 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 0 10px rgba(45, 106, 79, 0.4);
 }
+
+.navbar .btn-outline-success:hover {
+    background: linear-gradient(135deg, #40916c, #74c69d);
+    box-shadow: 0 0 20px rgba(82, 183, 136, 0.8);
+    transform: scale(1.05);
+}
+
 
 main {
-    flex: 1;
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 900px;
     width: 100%;
+    margin: 50px auto;
+    padding: 50px;
+    background-color: white;
+    border-radius:24px;
+    box-shadow: 0 15px 35px solid green;
+    border: 1px solid green ;
+    flex: 1;
+}
+
+main h3[style*="text-align: center;"] {
+    font-size: 2.4rem;
+    color: green;
+    margin-bottom: 12px;
+    font-weight: 800;
+}
+
+main h3:not([style*="text-align: center;"]) {
+    font-size: 1.6rem;
+    color:black;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+main p {
+    font-size: 1.1rem;
+    color: black;
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+main h4 {
+    font-size: 1.25rem;
+    color: black;
+    background: rgba(45, 106, 79, 0.2);
+    padding: 18px 22px;
+    border-left: 5px solid green;
+    border-radius: 0 16px 16px 0;
+    margin: 35px 0;
+    font-weight: 600;
+}
+
+main h2 {
+    font-size: 1.7rem;
+    color: green;
+    text-align: center;
+    margin-top: 45px;
+    font-weight: 700;
 }
 
 footer {
-    background-color: #2c5e3b; /* Sötétzöld háttér a láblécnek */
-    color: #ffffff;
-    padding: 50px 20px 20px 20px;
+    background-color: #090d16;
+    color: #64748b;
+    padding: 70px 20px 40px;
     margin-top: auto;
+    border-top: 1px solid rgba(63, 173, 201, 0.05);
 }
 
 footer .wrap.foot {
@@ -71,20 +225,35 @@ footer .wrap.foot {
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
+    gap: 40px;
 }
 
 footer h4 {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    color: #a3e4d7; /* Halvány zöld kiemelés */
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 8px;
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+    font-weight: 600;
 }
 
-footer p {
-    font-size: 0.9rem;
-    color: #e0e0e0;
+footer h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background-color: #52b788;
+    border-radius: 2px;
+    box-shadow: 0 0 8px #52b788;
+}
+
+footer p, footer ul li, footer ul li a {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
 }
 
 footer ul {
@@ -92,49 +261,61 @@ footer ul {
 }
 
 footer ul li {
-    margin-bottom: 8px;
-    font-size: 0.9rem;
-    color: #e0e0e0;
-}
-
-footer ul li a {
-    color: #e0e0e0;
-    text-decoration: none;
-    transition: color 0.2s ease;
+    margin-bottom: 12px;
 }
 
 footer ul li a:hover {
     color: #ffffff;
-    text-decoration: underline;
-}
-footer {
-    background-color: #2c5e3b;
-    color: #ffffff;
-    padding: 40px 20px;
-    margin-top: auto;
-    text-align: center;
+    padding-left: 6px;
+    text-shadow: 0 0 8px rgba(255,255,255,0.5);
 }
 
-.footer-box {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 2px solid #a3e4d7; /* Halvány zöld/türkiz keret */
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.05); /* Enyhén áttetsző háttér a kereten belül */
-}
 
-.footer-box p {
-    margin-bottom: 10px;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: #f9f6f0;
-}
+@media (max-width: 991.98px) {
+    .navbar {
+        padding: 0.8rem 1.2rem;
+    }
+    
+    .navbar-nav {
+        margin-left: 0;
+        gap: 8px;
+        padding-top: 15px;
+    }
 
-.footer-box p:last-child {
-    margin-bottom: 0;
-}
+    .navbar-collapse {
+        background-color: gray;
+        padding: 24px;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px aqua;
+        margin-top: 15px;
+        border: 1px solid rgba(255,255,255,0.08);
+    }
+    
+    .navbar-nav .nav-link.active::after {
+        width: 30%; /* Mobilon is rövidebb marad a zöld csík */
+        left: 12px;
+    }
+    
+    .navbar form.d-flex {
+        margin-top: 15px;
+        width: 100%;
+        flex-direction: column;
+        border-radius: 16px;
+        padding: 10px;
+    }
 
-img{
-    width: 300px;
+    .navbar .form-control {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .navbar .btn-outline-success {
+        width: 100%;
+        padding: 10px;
+    }
+
+    main {
+        margin: 20px 15px;
+        padding: 25px;
+    }
 }
