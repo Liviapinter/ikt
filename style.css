@@ -159,7 +159,23 @@ body {
     transform: scale(1.05);
 }
 
+.hero {
+    background:
+        linear-gradient( rgba(11, 66, 34, 0.5), rgba(4, 245, 76, 0.349)),
+        url('termekek.jpg') center / cover no-repeat;
+    color: white;
+    padding: 88px 20px 80px;
+    text-align: center;
+}
 
+.hero p{
+    font-size: 22px;
+    max-width: 640px;
+    color: black;
+    text-shadow:1.65px  1.65px -0 rgb(197, 255, 197);
+    margin: 0 auto 28px;
+    opacity: 0.95;
+}
 main {
     max-width: 900px;
     width: 100%;
@@ -177,6 +193,7 @@ main h3[style*="text-align: center;"] {
     color: green;
     margin-bottom: 12px;
     font-weight: 800;
+    text-shadow:-3px  3px 0 black;
 }
 
 main h3:not([style*="text-align: center;"]) {
@@ -215,6 +232,68 @@ main h2 {
     max-width: 1180px;
     margin:  auto;
     padding: 0 20px;
+}
+.style-card {
+    max-width: 220px; 
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.2s ease;
+}
+
+.style-card:hover {
+    transform: translateY(-4px);
+    border-color: #1b4332;
+}
+
+
+.card-body { 
+    padding: 12px 14px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.card-body h3 {
+    font-size: 21px;
+    margin-bottom: 4px ;
+}
+
+.stars { 
+    color: #f1c40f; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    font-size: 16px;
+    font-weight: 700; 
+    margin-bottom: 0;
+}
+
+.price {
+    color: #2d6a4f;
+    font-weight: 800; 
+    font-size: 16px; 
+    margin-bottom: 6px;
+}
+
+
+.card-body button {
+    width: 100%;
+    background: linear-gradient(135deg, #2d6a4f, #52b788);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card-body button:hover {
+    background: linear-gradient(135deg, #1b4332, #2d6a4f);
+    transform: scale(1.02);
 }
 
 footer {
@@ -276,7 +355,7 @@ footer ul li a:hover {
 }
 
 
-@media (max-width: 991.98px) {
+/* @media (max-width: 991.98px) {
     .navbar {
         padding: 0.8rem 1.2rem;
     }
@@ -298,7 +377,7 @@ footer ul li a:hover {
     
     .navbar-nav .nav-link.active::after {
         width: 30%; /* Mobilon is rövidebb marad a zöld csík */
-        left: 12px;
+        /* left: 12px;
     }
     
     .navbar form.d-flex {
@@ -323,7 +402,7 @@ footer ul li a:hover {
         margin: 20px 15px;
         padding: 25px;
     }
-}
+} */ 
 .valami{
     text-align: center;
     color:#090d16;
