@@ -71,7 +71,7 @@ body {
 
 .navbar-nav .nav-link[href*="kutyak"]::before { content: "🐶"; font-size: 0.9rem; }
 .navbar-nav .nav-link[href*="macskak"]::before { content: "🐱"; font-size: 0.9rem; }
-.navbar-nav .nav-link[href*="madarok"]::before { content: "🐦"; font-size: 0.9rem; }
+.navbar-nav .nav-link[href*="madarak"]::before { content: "🐦"; font-size: 0.9rem; }
 .navbar-nav .nav-link[href*="kisallatok"]::before { content: "🐹"; font-size: 0.9rem; }
 
 
@@ -265,8 +265,8 @@ main h2 {
 .stars { 
     color: #f1c40f; 
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    font-size: 16px;
-    font-weight: 700; 
+    font-size: 23px;
+    font-weight: 400; 
     margin-bottom: 0;
 }
 
