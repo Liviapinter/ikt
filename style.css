@@ -161,7 +161,7 @@ body {
 
 .hero {
     background:
-        linear-gradient( rgba(11, 66, 34, 0.5), rgba(4, 245, 76, 0.349)),
+        linear-gradient( rgba(11, 66, 34, 0.411), rgba(4, 245, 76, 0.233)),
         url('termekek.jpg') center / cover no-repeat;
     color: white;
     padding: 88px 20px 80px;
